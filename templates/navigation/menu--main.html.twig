@@ -1,0 +1,32 @@
+{% import _self as menus %}
+
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+    {% import _self as menus %}
+    {% if items %}
+        {% for item in items %}
+            {% if item.below %}
+                <li class="dropdown">
+                    <span class="dropdown__trigger">{{ item.title }}</span>
+                    <div class="dropdown__container text-left">
+                        <div class="container">
+                            <div class="row">
+                                <div class="dropdown__content col-md-3">
+                                    <ul class="menu-vertical">
+                                        {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{{ item.url }}">{{ item.title }}</a>
+                </li>
+            {% endif %}
+
+        {% endfor %}
+    {% endif %}
+{% endmacro %}

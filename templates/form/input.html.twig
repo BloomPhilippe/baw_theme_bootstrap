@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+{% if attributes.type == 'text' or attributes.type == 'email' or attributes.type == 'password' %}
+    <div class="col-md-6">
+        <div class="form-group text-left">
+            <label>{{ attributes.placeholder }}</label>
+            <input type="{{ attributes.type }}" name="{{ attributes.name }}" placeholder="" class="form-control" required/>{{ children }}
+        </div>
+    </div>
+{% else %}
+<div class="hidden">
+    <input{{ attributes }} />
+</div>
+{% endif %}

@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme override for a view template to display a list of rows.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the container.
+ * - rows: A list of rows for this list.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's contents.
+ * - title: The title of this group of rows. May be empty.
+ * - list: @todo.
+ *   - type: Starting tag will be either a ul or ol.
+ *   - attributes: HTML attributes for the list element.
+ *
+ * @see template_preprocess_views_view_list()
+ */
+#}
+
+<ul class="accordion accordion-2 accordion--oneopen" style="margin-bottom: 0px;">
+    <li>
+        <div class="accordion__title">
+            <span class="h5">{{ title }}</span>
+        </div>
+        <div class="accordion__content">
+            {% for row in rows %}
+                {{ row.content }}
+            {% endfor %}
+            <div style="clear: both"></div>
+        </div>
+    </li>
+</ul>

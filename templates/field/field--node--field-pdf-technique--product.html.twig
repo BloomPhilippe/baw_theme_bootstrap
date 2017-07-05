@@ -1,0 +1,9 @@
+{% if items is not empty %}
+<ul>
+    {% for item in items %}
+        <li>
+            {{ item.content }}
+        </li>
+    {% endfor %}
+</ul>
+{% endif %}

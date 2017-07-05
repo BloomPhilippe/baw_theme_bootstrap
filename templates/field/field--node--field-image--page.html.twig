@@ -1,0 +1,21 @@
+{% if items is not empty %}
+<section class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="slider border--round" data-arrows="true" data-paging="true">
+                    <ul class="slides">
+                        {% for item in items %}
+                            <li>
+                                <img alt="Image" src="{{ item.content }}" />
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+{% endif %}

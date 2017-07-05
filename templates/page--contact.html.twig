@@ -1,0 +1,38 @@
+{% include directory ~ '/templates/includes/header-bar-white.html.twig' %}
+
+<div class="main-container">
+    <section class="unpad ">
+        <div class="map-container border--round" data-maps-api-key="AIzaSyCfo_V3gmpPm1WzJEC9p_sRbgvyVbiO83M"
+             data-address="Chaussée de marche 799, 5100 Wierde" data-marker-title="Burotic"
+             data-map-style="[{&quot;featureType&quot;:&quot;landscape&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FFBB00&quot;},{&quot;saturation&quot;:43.400000000000006},{&quot;lightness&quot;:37.599999999999994},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FFC200&quot;},{&quot;saturation&quot;:-61.8},{&quot;lightness&quot;:45.599999999999994},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;road.arterial&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FF0300&quot;},{&quot;saturation&quot;:-100},{&quot;lightness&quot;:51.19999999999999},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;road.local&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FF0300&quot;},{&quot;saturation&quot;:-100},{&quot;lightness&quot;:52},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#0078FF&quot;},{&quot;saturation&quot;:-13.200000000000003},{&quot;lightness&quot;:2.4000000000000057},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;poi&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#00FF6A&quot;},{&quot;saturation&quot;:-1.0989010989011234},{&quot;lightness&quot;:11.200000000000017},{&quot;gamma&quot;:1}]}]"
+             data-map-zoom="15"></div>
+    </section>
+    <section class="">
+        <div class="container">
+            <div class="col-sm-12" style="padding-bottom: 30px">
+                <h1>{{ 'Contactez-nous'|trans }}</h1>
+                <p>
+                    {{ 'Une question, une remarque ou besoin de plus d’informations concernant nos imprimantes ? Remplissez ce formulaire de contact pour que nous puissions vous répondre rapidement.'|trans }}
+                </p>
+            </div>
+            <div class="col-sm-12 col-md-5">
+                {% if page.sidebar_contact %}
+                    {{ page.sidebar_contact }}
+                {% endif %}
+            </div>
+            <div class="col-sm-12 col-md-7">
+                {% if page.content %}
+                    {{ page.content }}
+                {% endif %}
+            </div>
+            <div style="clear: both"></div>
+            <div class="col-sm-12" style="padding: 30px 15px">
+                {% if page.sidebar_second %}
+                    {{ page.sidebar_second }}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <div class="clearfix"></div>
+    {% include directory ~ '/templates/includes/footer.html.twig' %}
+</div>

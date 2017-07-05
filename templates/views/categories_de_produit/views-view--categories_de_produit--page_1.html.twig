@@ -1,0 +1,27 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12" style="padding-bottom: 30px">
+                <h1>{{ 'Produit à la Une'|trans }}</h1>
+                <p>
+                    {{ 'Découvrez les fiches techniques de nos différents photocopieurs et imprimantes RICOH'|trans }}<br>
+                    {{ 'Dans notre catalogue, choisissez la machine adaptée à vos besoins. '|trans }}</p>
+            </div>
+            <div class="col-sm-12">
+                <div class="masonry">
+                    <div class="row">
+                        <div class="masonry__container masonry--active">
+                            {{ rows }}
+                        </div>
+                        <!--end of masonry container-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end masonry-->
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+

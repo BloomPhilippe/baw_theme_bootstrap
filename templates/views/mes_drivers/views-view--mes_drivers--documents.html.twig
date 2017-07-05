@@ -1,0 +1,28 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                {% if header %}
+                    {{ header }}
+                {% endif %}
+                {{ rows }}
+                {% if footer %}
+                <ul class="accordion accordion-2 accordion--oneopen">
+                    <li>
+                        <div class="accordion__title">
+                            <span class="h5">{{ 'Manuel d\'utilisation'|trans }}</span>
+                        </div>
+                        <div class="accordion__content">
+                            {{ footer }}
+                            <div style="clear: both"></div>
+                        </div>
+                    </li>
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+

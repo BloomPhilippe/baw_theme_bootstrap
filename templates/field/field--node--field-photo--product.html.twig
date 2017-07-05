@@ -1,0 +1,11 @@
+{% if items is not empty %}
+<div class="slider border--round boxed--border" data-paging="true" data-arrows="true">
+    <ul class="slides">
+        {% for item in items %}
+            <li>
+                <img alt="Image" src="{{ item.content }}" />
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}

@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+
+<section class="imagebg image--light cover cover-blocks bg--secondary section-breadcrumb">
+    <div class="background-image-holder hidden-xs">
+        <img alt="background" src="{{ imgBreadcrumbURL }}">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-breadcrumb">
+                <div>
+                    <h1 style="color: #ffffff">{{ title_page }}</h1>
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="/">{{ 'Accueil'|trans }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ link_categories }}">{{ 'Nos catégories'|trans }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ default_category_link }}">{{ default_category }}</a>
+                        </li>
+                        <li>
+                            <a href="#">{{ title_page }}</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>

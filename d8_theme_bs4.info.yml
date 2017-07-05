@@ -1,0 +1,28 @@
+name: BAW Thème
+description: Thème créé pour Bloom Philippe
+type: theme
+core: 8.x
+
+regions:
+      header: Header
+      primary_menu: 'Primary menu'
+      primary_menu_responsive: 'Primary menu responsive'
+      secondary_menu: 'Secondary menu'
+      page_top: 'Page top'
+      page_bottom: 'Page bottom'
+      highlighted: Highlighted
+      featured_top: 'Featured top'
+      breadcrumb: Breadcrumb
+      content: Content
+      sidebar_first: 'Sidebar first'
+      sidebar_second: 'Sidebar second'
+      sidebar_contact: 'Sidebar contact'
+      featured_bottom_first: 'Featured bottom first'
+      featured_bottom_second: 'Featured bottom second'
+      featured_bottom_third: 'Featured bottom third'
+      footer_first: 'Footer first'
+      footer_second: 'Footer second'
+      footer_third: 'Footer third'
+      footer_fourth: 'Footer fourth'
+      footer_fifth: 'Footer fifth'
+
