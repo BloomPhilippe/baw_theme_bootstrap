@@ -1,5 +1,5 @@
 const path = require('path');
-const publicPath = '/files/themes/THEME_FOLDER/assets/';
+const publicPath = '/themes/d8_theme_bs4/assets/';
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer')({ browsers: 'last 2 versions' });
