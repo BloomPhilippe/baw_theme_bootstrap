@@ -23,7 +23,7 @@ var jsPaths = [
  * Description : Compile le fichier main.scss, place ce fichier dans le répertoire css et le minifie
  */
 gulp.task('scss', function() {
-    return gulp.src('src/scss/app.scss')
+    return gulp.src(['src/scss/app.scss'])
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer('last 2 version'))
         .pipe(rename('main.css'))
