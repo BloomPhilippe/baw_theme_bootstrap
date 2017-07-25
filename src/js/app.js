@@ -1,1 +1,4 @@
-console.log('hohoho')
+require('jquery');
+require('tether');
+require('bootstrap');
+console.log('hohoho');
