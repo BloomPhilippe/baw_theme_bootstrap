@@ -21,7 +21,7 @@ module.exports = {
             { // ci-dessous, on défini les regle de la tache scss
                 test: /\.(sass|scss)$/,
                 loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
-            }
+            },
         ],
     },
     plugins: [
