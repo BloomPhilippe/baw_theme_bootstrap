@@ -9,6 +9,7 @@ var tether = require('tether');
 module.exports = {
     entry: [
         __dirname + '/src/js/app.js',
+        __dirname + '/node_modules/bootstrap/scss/bootstrap.scss',
         __dirname + '/src/scss/app.scss'
     ],
     output: {
