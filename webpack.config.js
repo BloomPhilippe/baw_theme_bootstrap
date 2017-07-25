@@ -5,6 +5,7 @@ var styleLintPlugin = require('stylelint-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var jquery = require('jquery');
 var tether = require('tether');
+var file = require('file');
 
 module.exports = {
     entry: [
@@ -21,7 +22,7 @@ module.exports = {
                 test: /\.(sass|scss)$/,
                 loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
             }
-        ]
+        ],
     },
     plugins: [
         // ci-dessous, on défini l'endroit et le nom du fichier compilé
