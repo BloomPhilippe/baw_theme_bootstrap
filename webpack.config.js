@@ -13,7 +13,10 @@ module.exports = {
         rules: [
             { // ci-dessous, on défini les regle de la tache scss
                 test: /\.(sass|scss)$/,
-                loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+                loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
+                options: {
+                    includePaths: [ __dirname + "\\node_modules\\bootstrap\\scss\\bootstrap.scss"]
+                }
             }
         ]
     },
@@ -23,5 +26,9 @@ module.exports = {
             filename: 'dist/main.css',
             allChunks: true,
         }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
     ]
 };
