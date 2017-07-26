@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Drupal\taxonomy\Entity\Term;
 
 function d8_theme_bs4_preprocess_html(&$variables) {
-
+  $variables['assets_path'] = '/mes-testes/drupal8/themes/custom/d8_theme_bs4/dist/';
 }
 
 function d8_theme_bs4_preprocess_page(&$variables) {
