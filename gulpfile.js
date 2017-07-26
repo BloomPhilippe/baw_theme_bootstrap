@@ -26,6 +26,9 @@ gulp.task('scss', function() {
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer('last 2 version'))
         .pipe(rename('main.css'))
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(minifycss())
         .pipe(gulp.dest('dist/'))
         .on('end', function() {
@@ -54,7 +57,8 @@ gulp.task('js', function() {
 
 gulp.task('watch', function()
 {
-    gulp.watch('scss/*.scss', ['scss']);
+    gulp.watch('src/scss/*.scss', ['scss']);
+    gulp.watch('src/js/*.js', ['js']);
 });
 
 // default task
