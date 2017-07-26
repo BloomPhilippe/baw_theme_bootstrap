@@ -5,15 +5,14 @@ var gulp = require('gulp'),
     minifycss = require('gulp-minify-css'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    gutil = require('gulp-util');
+    gutil = require('gulp-util'),
+    order = require("gulp-order");
 
 var jsPaths = [
     'node_modules/jquery/dist/jquery.js',
     'node_modules/tether/dist/js/tether.js',
     'node_modules/bootstrap/dist/js/bootstrap.js',
-    'js/*.js',
-    'js/**/*.js',
-    '!js/*.min.js'
+    'src/js/app.js'
 ];
 
 
@@ -46,7 +45,7 @@ gulp.task('js', function() {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('build/js'))
+        .pipe(gulp.dest('dist/'))
         .on('end', function() {
             gutil.log(gutil.colors.yellow('♠ La tâche JavaScript est terminée.'));
         });
