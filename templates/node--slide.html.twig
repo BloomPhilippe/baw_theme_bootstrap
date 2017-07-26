@@ -1,0 +1,7 @@
+<div class="carousel-item">
+    <img class="d-block img-fluid" src="{{ content.field_image|render|striptags }}" alt="">
+    <div class="carousel-caption d-none d-md-block">
+        <h3>{{ label|render|striptags }}</h3>
+        <div>{{ node.body.value|raw }}</div>
+    </div>
+</div>

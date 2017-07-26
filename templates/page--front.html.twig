@@ -1,15 +1,11 @@
-
-  {% include directory ~ '/templates/includes/header.html.twig' %}
-
-  <div class="main-container">
+<div class="container">
     {% if page.featured_top %}
-      {{ page.featured_top }}
+        {{ page.featured_top }}
     {% endif %}
     {% if page.content %}
-      {{ page.content }}
+        {{ page.content }}
     {% endif %}
     {% if page.featured_bottom_first %}
-      {{ page.featured_bottom_first }}
+        {{ page.featured_bottom_first }}
     {% endif %}
-    {% include directory ~ '/templates/includes/footer.html.twig' %}
-  </div>
+</div>
