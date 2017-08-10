@@ -1,5 +1,5 @@
 {
-  "name": "BloomPhilippe/d8_theme_bs4",
+  "name": "bloom-philippe/d8_theme_bs4",
   "description": "Theme drupal avec bs4, webpack et gulp",
   "type": "drupal-custom-theme",
   "license": "GPL-2.0+",
