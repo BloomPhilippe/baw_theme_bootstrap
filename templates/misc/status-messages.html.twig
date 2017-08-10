@@ -21,34 +21,28 @@
  *   - class: HTML classes.
  */
 #}
-<section class="bg--primary text-center">
-    <div class="col-sm-12 col-lg-12 col-md-12 col-xs-12 col-status-message">
-        {% for type, messages in message_list %}
-        <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
-            {% if type == 'error' %}
-            <div class="pdwAlert" role="alert">
-                {% else %}
-                <div class="pdwAlert" role="alert">
-                    {% endif %}
-                    {% if status_headings[type] %}
-                        <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
-                    {% endif %}
-                    {% if messages|length > 1 %}
-                        <ul>
-                            {% for message in messages %}
-                                <li>{{ message }}</li>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        {{ messages|first }}
-                    {% endif %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-12 col-md-12 col-xs-12 col-status-messages">
+            {% for type, messages in message_list %}
+            {% if messages|length > 1 %}
+                {% for message in messages %}
                     {% if type == 'error' %}
-                </div>
-                {% endif %}
-            </div>
-            {% endfor %}
+                        <div class="alert alert-danger" role="alert">
+                            <strong>{{ 'Oups!'|trans }} </strong> {{ message }}
+                        </div>
+                    {% else %}
+                        <div class="alert alert-info" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                {{ messages|first }}
+            {% endif %}
         </div>
     </div>
-</section>
+</div>
+
 
 

@@ -1,6 +1,14 @@
 @import "node_modules/bootstrap/scss/bootstrap.scss";
-.test{
-  .test-child{
-    color: #ffffff;
+
+@import "breadcrumb";
+
+fieldset{
+  legend{
+    font-size: 20px;
+  }
+  .fieldset-wrapper{
+    legend{
+      font-size: 14px;
+    }
   }
 }

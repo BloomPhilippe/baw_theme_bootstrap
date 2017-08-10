@@ -1,0 +1,11 @@
+{% extends "page.html.twig" %}
+
+{% block replaceable %}
+    {% block breadcrumb %}
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">{{ page['#title'] }}</li>
+            <li class="breadcrumb-item"><a href="/search/node">{{ "Recherche" |trans}}</a></li>
+            <li class="breadcrumb-item"><a href="/">{{ "Home" |trans}}</a></li>
+        </ol>
+    {% endblock %}
+{% endblock %}

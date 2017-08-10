@@ -25,13 +25,11 @@
  * @see template_preprocess_block()
  */
 #}
-<div aria-labelledby="{{ heading_id }}" class="contextual-region">
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
-</div>
+
+<ul aria-labelledby="{{ heading_id }}" class="navbar-nav mr-auto contextual-region">
+    {% block content %}
+        {{ title_prefix }}
+        {{ title_suffix }}
+        {{ content }}
+    {% endblock %}
+</ul>

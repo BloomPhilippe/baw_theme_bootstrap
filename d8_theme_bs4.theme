@@ -8,9 +8,10 @@ use Drupal\Core\Link;
 use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\Request;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\node\Entity\Node;
 
 function d8_theme_bs4_preprocess_html(&$variables) {
-  $variables['assets_path'] = '/mes-testes/drupal8/themes/custom/d8_theme_bs4/dist/';
+  $variables['assets_path'] = '/Drupal8/d8_testing/themes/custom/d8_theme_bs4/dist/';
 }
 
 function d8_theme_bs4_preprocess_page(&$variables) {
@@ -21,29 +22,80 @@ function d8_theme_bs4_preprocess_node(&$variables) {
 
 }
 
-
 function d8_theme_bs4_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
 
-  if ($hook === 'views_view') {
-    if ($variables['view']->id() === 'secteurs_d_activites') {
-      $suggestions[] = 'views_view__secteurs_d_activites';
-    }
-  }
-  elseif ($hook === 'page') {
-    if ($node = \Drupal::request()->attributes->get('node')) {
-      array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
-    }
-  }
 }
+
+function d8_theme_bs4_theme_suggestions_page_alter(array &$suggestions, array $variables, $hook) {
+
+    /*
+     *
+     * 1.1 Si c'est une page pour un node, j'ajoute un template avec le type du node
+     * 1.2 Si c'est une page pour une vue, j'ajoute un template avec le slug de la vue
+     * 1.3 Si ce n'est ni lié à un node ou à une vue, on vérifie les alias pour rechercher le node lié
+     *
+     */
+    if ($node = \Drupal::request()->attributes->get('node')) {
+        array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
+    }elseif (strpos(\Drupal::routeMatch()->getRouteName(), 'view') !== false){
+        $suggestions[] = 'page__view';
+        $route_name_array = explode(".", \Drupal::routeMatch()->getRouteName());
+        $view = \Drupal\views\Views::getView($route_name_array[1]);
+        if(!is_null($view)){
+            $suggestions[] = 'page__view__'.$view->id();
+        }
+    }else{
+        $current_path = \Drupal::service('path.current')->getPath();
+        $query = \Drupal::database()->select('url_alias', 'ua');
+        $query->fields('ua', ['source', 'alias']);
+        $query->condition('ua.alias', $current_path);
+        $query->range(0, 1);
+        $originalPath = $query->execute()->fetchAssoc();
+        if($originalPath !== false){
+            $url_object = \Drupal::service('path.validator')->getUrlIfValid($originalPath);
+            $nid = $url_object->getrouteParameters()['node'];
+            $url_object_front = \Drupal::service('path.validator')->getUrlIfValid('/');
+            $nid_front = $url_object_front->getrouteParameters()['node'];
+            if($nid == $nid_front){
+                $suggestions[] = 'page__front';
+            }else{
+                $node = Node::load($nid);
+                array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
+            }
+        }
+
+    }
+
+}
+
+function d8_theme_bs4_theme_suggestions_node_alter(array &$suggestions, array $variables, $hook) {
+
+    if(\Drupal::service('path.matcher')->isFrontPage()){
+        $suggestions[] = 'node__front';
+    }
+}
+
+function d8_theme_bs4_theme_suggestions_form_alter(array &$suggestions, array $variables, $hook) {
+    $suggestions[] = 'form__'.$variables['element']['#form_id'];
+}
+
+function d8_theme_bs4_theme_suggestions_input_alter(array &$suggestions, array $variables, $hook) {
+
+}
+
+
 
 function d8_theme_bs4_theme_suggestions_block_alter(array &$suggestions, array $variables) {
-  $elements = $variables['elements'];
-
-  if (isset($elements['content']['#block_content'])) {
-    $bundle = $elements['content']['#block_content']->bundle();
-    $suggestions[] = 'block__' . $bundle;
-  }
+    $elements = $variables['elements'];
+    $block = Block::load($variables['elements']['#id']);
+    $suggestions[] = 'block__' . $block->getRegion() . '__' . $variables['elements']['#id'];
+    if (isset($elements['content']['#block_content'])) {
+        $bundle = $elements['content']['#block_content']->bundle();
+        $suggestions[] = 'block__' . $block->getRegion() . '__' . $bundle;
+        $suggestions[] = 'block__' . $bundle;
+    }
 }
+
 
 function d8_theme_bs4_preprocess_views_view_fields(&$variables) {
 

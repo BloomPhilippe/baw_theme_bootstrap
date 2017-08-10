@@ -10,8 +10,10 @@
  * @see template_preprocess_form()
  */
 #}
-<form{{ attributes }}>
-  {{ children }}
-  <div class="clearfix"></div>
-  <button type="submit" class="btn btn-primary">{{ "Envoyer" |trans}}</button>
+
+<form class="form-inline my-2 my-lg-0" {{ attributes|without('class') }}>
+    {{ children }}
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 </form>
+
+

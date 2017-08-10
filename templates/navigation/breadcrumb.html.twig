@@ -8,21 +8,18 @@
  */
 #}
 {% if breadcrumb %}
-  <!-- Inner Bnner -->
-  <section class="banner-parallax overlay-dark" data-image-src="/themes/custom/pdw/images/inner-banner.jpg" data-parallax="scroll">
-    <div class="inner-banner">
-      <h3>{{ title_page }}</h3>
-      <ul class="tm-breadcrum">
-        {% for item in breadcrumb %}
-          <li>
-            {% if item.url %}
-              <a href="{{ item.url }}">{{ item.text }}</a>
-            {% else %}
-              {{ item.text }}
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </section>
+    <nav role="navigation" aria-labelledby="system-breadcrumb">
+        <h2 id="system-breadcrumb" class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
+        <ol>
+            {% for item in breadcrumb %}
+                <li>
+                    {% if item.url %}
+                        <a href="{{ item.url }}">{{ item.text }}</a>
+                    {% else %}
+                        {{ item.text }}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ol>
+    </nav>
 {% endif %}

@@ -1,9 +1,18 @@
 {% include directory ~ '/templates/includes/header.html.twig' %}
-
-<div class="main-container">
-  {% include directory ~ '/templates/includes/custom-breadcrumb.html.twig' %}
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">{{ page['#title'] }}</h1>
+    {% block breadcrumb %}
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active">{{ page['#title'] }}</li>
+        <li class="breadcrumb-item"><a href="/">{{ "Home" |trans}}</a></li>
+      </ol>
+    {% endblock %}
+  </div>
+</div>
+<div class="container">
   {% if page.content %}
     {{ page.content }}
   {% endif %}
-  {% include directory ~ '/templates/includes/footer.html.twig' %}
 </div>
+{% include directory ~ '/templates/includes/footer.html.twig' %}

@@ -1,22 +1,21 @@
-name: BAW Thème
-description: Thème créé pour Bloom Philippe
+name: D8 theme bs4
+description: Thème créé pour Philippe Bloom
 type: theme
 core: 8.x
 
 regions:
-      header: Header
+      header: 'Header'
       primary_menu: 'Primary menu'
       primary_menu_responsive: 'Primary menu responsive'
       secondary_menu: 'Secondary menu'
       page_top: 'Page top'
       page_bottom: 'Page bottom'
-      highlighted: Highlighted
+      highlighted: 'Highlighted'
       featured_top: 'Featured top'
-      breadcrumb: Breadcrumb
-      content: Content
+      breadcrumb: 'Breadcrumb'
+      content: 'Content'
       sidebar_first: 'Sidebar first'
       sidebar_second: 'Sidebar second'
-      sidebar_contact: 'Sidebar contact'
       featured_bottom_first: 'Featured bottom first'
       featured_bottom_second: 'Featured bottom second'
       featured_bottom_third: 'Featured bottom third'

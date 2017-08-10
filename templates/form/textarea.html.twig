@@ -13,10 +13,6 @@
  * @see template_preprocess_textarea()
  */
 #}
-
-<div class="col-md-12" id="message-field">
-    <div class="form-group text-left">
-        <label>{{ attributes.placeholder }}</label>
-        <textarea class="form-control" rows="4" id="form-message" name="{{ attributes.name }}" placeholder="" required="">{{ value }}</textarea>
-    </div>
+<div{{ wrapper_attributes }}>
+  <textarea{{ attributes }}>{{ value }}</textarea>
 </div>

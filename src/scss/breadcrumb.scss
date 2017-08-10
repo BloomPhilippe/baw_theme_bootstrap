@@ -1,0 +1,23 @@
+.breadcrumb{
+  padding: .75rem 0;
+  .breadcrumb-item {
+    float: right;
+  }
+  .breadcrumb-item+.breadcrumb-item
+  {
+    &::before {
+      display: inline-block;
+      padding-right: 0;
+      padding-left: 0;
+      color: #636c72;
+      content: " ";
+    }
+    &::after {
+      display: inline-block;
+      padding-right: .5rem;
+      padding-left: .5rem;
+      color: #636c72;
+      content: "/";
+    }
+  }
+}
