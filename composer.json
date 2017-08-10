@@ -1,0 +1,10 @@
+{
+  "name": "BloomPhilippe/d8_theme_bs4",
+  "description": "Theme drupal avec bs4, webpack et gulp",
+  "type": "drupal-custom-theme",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "require" : {
+    "BloomPhilippe/d8_export_bs4" : "*"
+  }
+}
