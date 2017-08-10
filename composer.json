@@ -5,6 +5,6 @@
   "license": "GPL-2.0+",
   "minimum-stability": "dev",
   "require" : {
-    "bloom-philippe/d8_export_bs4" : "dev-master"
+    "bloom-philippe/d8_export_bs4" : "*"
   }
 }
