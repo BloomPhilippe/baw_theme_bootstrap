@@ -22,25 +22,32 @@
  */
 #}
 <div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-lg-12 col-md-12 col-xs-12 col-status-messages">
-            {% for type, messages in message_list %}
-            {% if messages|length > 1 %}
-                {% for message in messages %}
-                    {% if type == 'error' %}
-                        <div class="alert alert-danger" role="alert">
-                            <strong>{{ 'Oups!'|trans }} </strong> {{ message }}
-                        </div>
-                    {% else %}
-                        <div class="alert alert-info" role="alert">
-                            {{ message }}
-                        </div>
-                    {% endif %}
-                {% endfor %}
+    <div class="col-status-messages">
+        {% for type, messages in message_list %}
+        {% if messages|length > 1 %}
+            {% for message in messages %}
+                {% if type == 'error' %}
+                    <div class="alert alert-danger" role="alert">
+                        <strong>{{ 'Oups!'|trans }} </strong> {{ message }}
+                    </div>
+                {% else %}
+                    <div class="alert alert-info" role="alert">
+                        {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {% if type == 'error' %}
+                <div class="alert alert-danger" role="alert">
+                    <strong>{{ 'Oups!'|trans }} </strong> {{ messages|first }}
+                </div>
             {% else %}
-                {{ messages|first }}
+                <div class="alert alert-info" role="alert">
+                    {{ messages|first }}
+                </div>
             {% endif %}
-        </div>
+        {% endif %}
+        {% endfor %}
     </div>
 </div>
 

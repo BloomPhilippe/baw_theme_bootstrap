@@ -70,22 +70,11 @@
  *   in different view modes.
  */
 #}
-<section class="bg--primary">
-  <div class="container container-front-page">
-    <div class="row">
-      <div class="col-sm-6 col-body">
-        <h1>{{ label }}</h1>
-        {{ node.body.value|raw }}
-      </div>
-      <div class="col-sm-6 col-image">
-        <div class="boxed boxed--lg boxed--border bg--primary-1">
-          <img alt="image" src="{{ block_description_image.field_image[0]|render|striptags }}" class="border--round">
-          <h5>{{ block_description_image.field_title[0]|render|striptags }}</h5>
-          <div>
-            {{ block_description_image.body }}
-          </div>
-        </div>
-      </div>
+<section class="container">
+  <div class="row">
+    <div class="col-sm-12 col-body">
+      <h1>{{ label }}</h1>
+      {{ node.body.value|raw }}
     </div>
   </div>
 </section>

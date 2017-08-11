@@ -10,12 +10,10 @@
     {% endblock %}
   </div>
 </div>
-<div class="container">
-  {% if page.highlighted %}
-    {{ page.highlighted }}
-  {% endif %}
-  {% if page.content %}
-    {{ page.content }}
-  {% endif %}
-</div>
+{% if page.highlighted %}
+  {{ page.highlighted }}
+{% endif %}
+{% if page.content %}
+  {{ page.content }}
+{% endif %}
 {% include directory ~ '/templates/includes/footer.html.twig' %}
