@@ -28,8 +28,13 @@ dependencies:
   - block_content
   - d8_export_bs4
   - field
+  - help
   - image
+  - language
+  - menu_ui
+  - node
   - path
+  - search
   - system
   - text
   - user

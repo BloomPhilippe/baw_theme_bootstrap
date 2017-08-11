@@ -1,0 +1,19 @@
+langcode: fr
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - d8_theme_bs4
+id: d8_theme_bs4_help
+theme: d8_theme_bs4
+region: content
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Aide
+  provider: help
+  label_display: '0'
+visibility: {  }

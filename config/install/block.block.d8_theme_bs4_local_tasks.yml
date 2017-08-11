@@ -1,0 +1,19 @@
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - d8_theme_bs4
+id: d8_theme_bs4_local_tasks
+theme: d8_theme_bs4
+region: content
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Onglets
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

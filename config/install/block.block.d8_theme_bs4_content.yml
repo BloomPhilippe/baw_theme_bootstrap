@@ -1,0 +1,19 @@
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - d8_theme_bs4
+id: d8_theme_bs4_content
+theme: d8_theme_bs4
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenu de la page principale'
+  provider: system
+  label_display: '0'
+visibility: {  }
