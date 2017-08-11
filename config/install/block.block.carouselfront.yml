@@ -1,0 +1,24 @@
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:carousel:83bfbc90-016b-4f26-b6f8-568fb95eb48c'
+  module:
+    - block_content
+  theme:
+    - d8_theme_bs4
+id: carouselfront
+theme: d8_theme_bs4
+region: featured_top
+weight: 0
+provider: null
+plugin: 'block_content:83bfbc90-016b-4f26-b6f8-568fb95eb48c'
+settings:
+  id: 'block_content:83bfbc90-016b-4f26-b6f8-568fb95eb48c'
+  label: 'Carousel : Front'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

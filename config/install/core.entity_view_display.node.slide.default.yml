@@ -1,0 +1,38 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.slide.body
+    - field.field.node.slide.field_image
+    - node.type.slide
+  module:
+    - image
+    - text
+    - user
+id: node.slide.default
+targetEntityType: node
+bundle: slide
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 102
+    label: hidden
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+    type: image_url
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

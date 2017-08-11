@@ -1,0 +1,27 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.carousel
+    - field.storage.block_content.field_slides
+    - node.type.slide
+id: block_content.carousel.field_slides
+field_name: field_slides
+entity_type: block_content
+bundle: carousel
+label: slides
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      slide: slide
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

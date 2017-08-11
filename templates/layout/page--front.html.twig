@@ -1,10 +1,4 @@
 {% include directory ~ '/templates/includes/header.html.twig' %}
-<div class="jumbotron">
-    <div class="container">
-        <h1 class="display-3">{{ page['#title'] }}</h1>
-        {% include directory ~ '/templates/breadcrumb/breadcrumb.html.twig' %}
-    </div>
-</div>
 <div class="container">
     {% if page.content %}
         {{ page.content }}
