@@ -4,5 +4,7 @@
   "type": "drupal-custom-theme",
   "license": "GPL-2.0+",
   "minimum-stability": "dev",
-  "require" : {}
+  "require" : {
+    "bloom-philippe/d8_export_bs4" : "*"
+  }
 }

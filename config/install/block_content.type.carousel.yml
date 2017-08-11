@@ -1,7 +1,0 @@
-langcode: fr
-status: true
-dependencies: {  }
-id: carousel
-label: Carousel
-revision: 0
-description: ''
