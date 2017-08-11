@@ -11,6 +11,9 @@
   </div>
 </div>
 <div class="container">
+  {% if page.highlighted %}
+    {{ page.highlighted }}
+  {% endif %}
   {% if page.content %}
     {{ page.content }}
   {% endif %}

@@ -1,4 +1,7 @@
 {% include directory ~ '/templates/includes/header.html.twig' %}
+{% if page.featured_top %}
+    {{ page.featured_top }}
+{% endif %}
 <div class="container">
     {% if page.content %}
         {{ page.content }}
