@@ -2,9 +2,9 @@
 {% if page.featured_top %}
     {{ page.featured_top }}
 {% endif %}
-<div class="container">
-    {% if page.content %}
-        {{ page.content }}
-    {% endif %}
-</div>
+
+{% if page.content %}
+    {{ page.content }}
+{% endif %}
+
 {% include directory ~ '/templates/includes/footer.html.twig' %}
