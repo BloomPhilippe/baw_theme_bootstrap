@@ -34,7 +34,7 @@
             <div class="card-text">
                 {{ content.body|raw }}
             </div>
-            <a href="{{ content.field_button[0]['#url'].toString }}" class="btn btn-primary">{{  content.field_button[0]['#title'] }}</a>
+            {{ content.field_button }}
         </div>
     </div>
 {% endblock %}

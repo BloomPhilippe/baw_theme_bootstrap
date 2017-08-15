@@ -37,6 +37,6 @@
  */
 #}
 {% for item in items %}
-    {{ item.content }}
+    <a href="{{ item.content['#url'].toString }}" class="btn btn-primary">{{ item.content['#title'] }}</a>
 {% endfor %}
 
