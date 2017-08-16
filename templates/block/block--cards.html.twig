@@ -27,14 +27,28 @@
 #}
 
 {% block content %}
-    <div class="card">
-        <img class="card-img-top" src="{{ content.field_image[0] }}" alt="Card image cap">
-        <div class="card-block">
-            <h4 class="card-title">{{ label }}</h4>
-            <div class="card-text">
-                {{ content.body|raw }}
+    <div class="{{ content.field_desktop_size[0] }} {{ content.field_mobile_size[0] }}">
+        <div class="card {{ content.field_text_align[0] }}">
+            {{ content.field_header }}
+            <img class="card-img-top" src="{{ content.field_image[0] }}" alt="Card image cap">
+            <div class="card-block">
+                <h4 class="card-title">{{ label }}</h4>
+                <div class="card-text">
+                    {{ content.body|raw }}
+                </div>
             </div>
-            {{ content.field_button }}
+            {{ content.field_list_group }}
+            {% if content.field_link|render|trim is not empty %}
+                <div class="card-block">
+                    {{ content.field_link }}
+                </div>
+            {% endif %}
+            {% if content.field_link|render|trim is not empty %}
+                <div class="card-block">
+                    {{ content.field_button }}
+                </div>
+            {% endif %}
+            {{ content.field_footer }}
         </div>
     </div>
 {% endblock %}
