@@ -11,7 +11,7 @@ use Drupal\taxonomy\Entity\Term;
 use Drupal\node\Entity\Node;
 
 function d8_theme_bs4_preprocess_html(&$variables) {
-  $variables['assets_path'] = base_path();
+  $variables['base_path'] = base_path();
 }
 
 function d8_theme_bs4_preprocess_page(&$variables) {
